@@ -235,7 +235,8 @@ prerender.buildApiUrl = function(req) {
   if (this.protocol) {
     protocol = this.protocol;
   }
-  var fullUrl = protocol + "://" + (this.host || req.headers['host']) + req.url;
+  // var fullUrl = protocol + "://" + (this.host || req.headers['host']) + req.url;
+  var fullUrl = "https://" + (this.host || req.headers['host']) + req.url; //modified to force https
   return prerenderUrl + forwardSlash + fullUrl;
 };
 
